@@ -21,6 +21,7 @@ curl -k $kurl/auth/admin/realms/$realm/groups -H "Content-Type: application/json
 
 # Get All keycloak client for debug
 curl -k -X GET "$kurl/auth/admin/realms/$realm/clients" -H "Authorization: Bearer $mastertoken"
+```
 
 ---
 # Sample all keycloakclient json
