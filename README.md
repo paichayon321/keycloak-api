@@ -1,7 +1,7 @@
 # keycloak-api
 
 # Create KeyCloakGroup
-Change password for your own
+Change initial variable for your own environment
 
 ```
 # Initial variable
