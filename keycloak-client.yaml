@@ -1,0 +1,31 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: basic-sso-client-secret
+  namespace: keycloak
+  labels:
+    app: basic-sso
+spec:
+  client:
+    clientAuthenticatorType: client-secret
+    clientId: basic-sso-client-secret
+    directAccessGrantsEnabled: false
+    implicitFlowEnabled: false
+    publicClient: false
+    secret: basic-sso-client-secret
+    standardFlowEnabled: false
+    protocol: openid-connect
+    protocolMappers:
+      - name: basic-map
+        protocol: openid-connect
+        protocolMapper: oidc-group-membership-mapper
+        config:
+          full.path: "false"
+          id.token.claim: "true"
+          access.token.claim: "true"
+          claim.name: groups
+          userinfo.token.claim: "true"
+  realmSelector:
+    matchLabels:
+      app: basic-sso
+  scopeMappings: {}
