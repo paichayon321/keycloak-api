@@ -1,4 +1,5 @@
 # keycloak-api
+Testing with Red Hat Single Sign-On Operator 7.6.6-opr-001 provided by Red Hat
 
 # Create KeyCloakGroup
 Change initial variable for your own environment
