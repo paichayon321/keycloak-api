@@ -1,7 +1,7 @@
 variables:
   realm:
     value: "basic"
-    description: "KeyCloak Group Name"  
+    description: "KeyCloak realm Name"  
 
   groupname:
     value: ""
