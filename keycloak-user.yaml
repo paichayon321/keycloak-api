@@ -1,0 +1,18 @@
+kind: KeycloakUser
+apiVersion: keycloak.org/v1alpha1
+metadata:
+  name: myuser
+  labels:
+    app: basic-sso
+  namespace: keycloak
+spec:
+  user:
+    username: myuser
+    firstName: firstname
+    lastName: mylastname
+    email: myuser@example.com
+    enabled: true
+    emailVerified: false
+  realmSelector:
+    matchLabels:
+      app: basic-sso
