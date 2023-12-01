@@ -50,3 +50,38 @@ curl -k -X GET "$kurl/auth/admin/realms/$realm/client-scopes" -H "Authorization:
 ```
 Usage: ./creategroup.sh <admin_username> <admin_password> <keycloak_url> <realm> <groupname>
 ```
+
+---
+
+# Build Container image for run script
+
+```
+docker build -t <your image>:<tag> .
+```
+
+# Run Scrtip from container image
+
+```
+docker run --rm <image:tag> sh ./creategroup.sh admin <password> "https://keycloak-keycloak.apps.524vf.dynamic.opentlc.com" "basic" "groupfromscript"
+
+```
+
+# Run from Job
+
+```
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: keyclock-job
+spec:
+  template:
+    metadata:
+      name: keyclock-pod
+    spec:
+      containers:
+      - name: keyclock-container
+        image: paichayon1/keycloakscript:1.1
+        command: ["sh", "/creategroup.sh", "admin", "<password>", "https://keycloak-keycloak.apps.524vf.dynamic.opentlc.com", "basic", "group-test1"]
+      restartPolicy: Never
+
+```
