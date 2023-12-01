@@ -9,6 +9,6 @@ spec:
     spec:
       containers:
       - name: keyclock-container
-        image: paichayon1/keyclockscript:1.1
+        image: paichayon1/keycloakscript:1.1
         command: ["sh", "/creategroup.sh", "admin", "xxxxxxx", "https://keycloak-keycloak.apps.524vf.dynamic.opentlc.com", "basic", "group-test1"]
       restartPolicy: Never
